@@ -9,7 +9,6 @@ services:
   nginx:
     container_name: nginx_reverse_proxy
     build: nginx_load_balancer
-    # Bind the port 80 of container to machine port 80
     ports:
       - "9090:9090"
     # Make app as nginx dependency service
