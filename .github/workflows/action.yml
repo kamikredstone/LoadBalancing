@@ -25,7 +25,7 @@ jobs:
       id:  build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: whist-app
+        ECR_REPOSITORY: whist_app
       run: |
         sha=$(git rev-parse --short "$GITHUB_SHA")
         branch=${GITHUB_REF#refs/heads/}
