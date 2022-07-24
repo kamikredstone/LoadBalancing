@@ -1,5 +1,4 @@
-name: "Tag Commit"
-description: "Triggers on commit and tags the new image it builds using the following format: `ImageName-Branch-CommitShortSha`"
+name: "Tag Image on Commit"
 on: 
   push:
 
