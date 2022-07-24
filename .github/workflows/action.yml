@@ -28,7 +28,7 @@ jobs:
         ECR_REPOSITORY: whist-app
       run: |
         sha=${{ github.sha }}
-        branch=${{ github.ref }}
+        branch=${{ github.head_ref }}
         name="my_app"
 
         docker image build -t $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest .
