@@ -28,7 +28,7 @@ jobs:
         ECR_REPOSITORY: whist-app
       run: |
         sha=${{ github.sha }}
-        branch=${{ github.ref }}
+        branch=${{ github.head_ref }}
         name="my_app"
         cd app
 
