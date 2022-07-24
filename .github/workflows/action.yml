@@ -27,7 +27,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: whist-app
       run: |
-        sha=$(git rev-parse --short "$GITHUB_SHA"
+        sha=$(git rev-parse --short "$GITHUB_SHA")
         branch=${GITHUB_REF#refs/heads/}
         name="my_app"
         cd app/
