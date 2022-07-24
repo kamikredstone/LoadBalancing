@@ -33,5 +33,6 @@ jobs:
         cd app/
 
         docker image build -t $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha
+        $ECR_REGISTRY/$ECR_REPOSITORY:lastest
 
