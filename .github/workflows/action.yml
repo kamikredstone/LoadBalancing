@@ -27,11 +27,11 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: whist-app
       run: |
-        sha=${{ github.sha }}
-        branch=${{ github.head_ref }}
+        sha=$(git rev-parse --short "$GITHUB_SHA"
+        branch=${GITHUB_REF#refs/heads/}
         name="my_app"
         cd app/
 
         docker image build -t $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY
 
