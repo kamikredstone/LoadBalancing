@@ -30,7 +30,7 @@ jobs:
         sha=${{ github.sha }}
         branch=${{ github.head_ref }}
         name="my_app"
-        cd app
+        cd app/
 
         docker image build -t $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$name-$branch-$sha -t $ECR_REGISTRY/$ECR_REPOSITORY:lastest
